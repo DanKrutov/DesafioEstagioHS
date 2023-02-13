@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Formulário</title>
+        <link rel="stylesheet" href="estilo.css">
+        <script src="script.js"></script>
+    </head>
+    <body style="background-color: grey;">
+        <div id="caixaForm">
+            <div id="form">
+                <h2>ETAPA 1: Inscrição no banco e análise automática </h2>
+                <form id="form">
+                    <div class="container">
+                        <div class="label">Nome:</div>
+                        <input id="nome" placeholder="Nome Segundonome" autofocus></input>
+                        <p id="nomeInvalido" class="msgErro" hidden="0">Nome inválido.</p>
+                    </div>
+                    <div class="container">
+                        <div class="label">E-mail:</div>
+                        <input id="email" placeholder="email@dominio.com"></input>
+                        <p id="emailInvalido" class="msgErro" hidden="0">E-mail inválido.</p>
+                    </div>
+                    <div class="container">
+                        <div class="label">RG(SSP):</div>
+                        <input id="rg" placeholder="00-000.000-0"></input>
+                        <p id="rgInvalido" class="msgErro" hidden="0">RG inválido.</p>
+                    </div>
+                    <div class="container">
+                        <div class="label">Telefone:</div>
+                        <input id="tel" placeholder="(00)00000-0000"></input>
+                        <p id="telInvalido" class="msgErro" hidden="0">Telefone inválido.</p>
+                    </div>
+                    <div class="container">
+                        <div class="label">CPF:</div>
+                        <input id="cpf" placeholder="000.000.000-00"></input>
+                        <p id="cpfInvalido" class="msgErro" hidden="0">CPF inválido.</p>
+                    </div>
+                    <div class="container">
+                        <div class="label">Inserir RG:</div>
+                        <input accept="image/*" type='file' id="documento" onchange="escolheFoto(event);" required/>
+                    </div>
+                    <div class="container">
+                        <div class="label">Inserir Selfie:</div>
+                        <input accept="image/*" type='file' id="selfie" onchange="escolheSelfie(event);" required/>
+                    </div>
+                </form>
+                <div class="container">
+                    <button onclick="puxarValores();">Enviar</button><button onclick="limparForm();">Limpar</button>
+                    <p style="color: red;" id="msgvazio" hidden="0">Um ou mais campos não foram preenchidos!</p>
+                    <p style="color: greenyellow;" id="msgSucesso" hidden="0">Formulário enviado!</p>
+                </div>
+            </div>
+            <div hidden="0" id="avaliacao">
+                <h2>ETAPA 2: Análise manual de dados informados</h2>
+                <label id="reg"></label>
+                <hr>
+                <h3>Dados pesssoais informados:</h3>
+                <div class="container">
+                    <div class="label">Nome:</div>
+                    <input id="nomeCadastrado" disabled></input>
+                </div>
+                <div class="container">
+                    <div class="label">CPF:</div>
+                    <input id="cpfCadastrado" disabled></input>
+                </div>
+                <div class="container">
+                    <div class="label">RG:</div>
+                    <input id="rgCadastrado" disabled></input>
+                </div>
+                <div style="width: 100%; height: 310px;" class="container">
+                    <div class="label">Foto de RG enviada:</div>
+                    <img id="imgDocumento">
+                    <div class="label">Foto de Selfie enviada:</div>
+                    <img id="imgSelfie">
+                </div>
+                <hr>
+                <h3>Dados de contato:</h3>
+                <div class="container">
+                    <div class="label">E-mail:</div>
+                    <input id="emailCadastrado" disabled></input>
+                </div>
+                <div class="container">
+                    <div class="label">Telefone:</div>
+                    <input id="telCadastrado" disabled></input>
+                </div>
+            </div>
+        </div>
+
+        <div hidden="0" id="caixaAnalise">
+            <div class="container">
+                <a>1. As informações passadas pelo usuário são válidas?</a><br> 
+                <input onclick="analiseCheckbox();" name="p1" value="1" type="radio">Sim 
+                <input onclick="analiseCheckbox();" name="p1" value="0" type="radio" checked="checked">Não
+            </div>
+            <div class="container">
+                <a>2. Os dados informados pertencem a apenas uma pessoa?</a> <br>
+                <input onclick="analiseCheckbox();" name="p2" value="1" type="radio">Sim 
+                <input onclick="analiseCheckbox();" name="p2" value="0" type="radio" checked="checked">Não
+            </div>
+            <div class="container">
+                <a>3. As informações passadas batem com a foto de RG enviada?</a><br>
+                <input onclick="analiseCheckbox();" name="p3" value="1" type="radio">Sim 
+                <input onclick="analiseCheckbox();" name="p3" value="0" type="radio" checked="checked">Não
+            </div>
+            <div class="container">
+                <a>4. A pessoa na selfie enviada se assemelha a da foto do RG?</a><br>
+                <input onclick="analiseCheckbox();" name="p4" value="1" type="radio">Sim 
+                <input onclick="analiseCheckbox();" name="p4" value="0" type="radio" checked="checked">Não
+            </div>
+
+            <div class="container">
+                <button hidden="0" id="btnConfirma" onclick="confirmaCadastro();">Confirmar Cadastro</button>
+                <button id="btnCancela" onclick="cancelaCadastro();">Cancelar Cadastro</button>
+                <p style="color: red;" id="msgCancelado" hidden="0">Cadastro cancelado.</p>
+                <p style="color: greenyellow;" id="msgConfirmado" hidden="0">Cadastro confirmado!</p>
+            </div>
+        </div>
+    </body>
+</html>

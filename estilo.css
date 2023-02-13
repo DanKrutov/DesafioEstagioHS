@@ -1,0 +1,92 @@
+*{
+    font-family: Verdana;
+}
+input{
+    width: 250px;
+}
+input:disabled{
+    background-color: white;
+    color: black;
+}
+input[type='radio']{
+    width: auto;
+}
+h2{
+    margin-top: 0px;
+    text-align: center;
+}
+button{
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    border-color: white;
+    border-style: solid;
+    cursor:pointer;
+    margin-right: 20px;
+}
+#btnConfirma{
+    color: greenyellow;
+    border-color: greenyellow;
+}
+#btnConfirma:hover{
+    background-color: greenyellow;
+    color: black;
+}
+#btnCancela{
+    color: red;
+    border-color: red;
+}
+#btnCancela:hover{
+    background-color: red;
+    color: black;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+}
+a{
+    width: 100%;
+}
+.label{
+    width: 100px;
+    margin-right: 0px;
+    float: left;
+}
+.container{
+    width: auto;
+    margin-bottom: 10px;
+    margin-right: 0px;
+}
+.faltante{
+    background-color: #ff9999;
+    border-color: #660000;
+}
+.msgErro{
+    width: auto;
+    font-size: 12px;
+    color: red;
+}
+#caixaForm{
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    width: 700px;
+    padding: 15px 25px 15px 25px;
+    float: left;
+}
+#caixaAnalise{
+    background-color: black;
+    color: white;
+    width: 500px;
+    padding: 15px 25px 15px 25px;
+    float: left;
+    margin-left: 30px;
+}
+img{
+    width: 200;
+    height: 310;
+    float: left;
+    margin-right: 15px;
+}
